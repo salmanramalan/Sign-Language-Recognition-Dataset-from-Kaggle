@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script href="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script href="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <link href="/static/css/main.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Demo</a>
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Help</button>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="content" style="margin-top:2em">
+            <h2>SL recognition</h2>
+            <div>
+                <form id="upload-file" method="post" action="/" enctype="multipart/form-data">
+                    <label for="imageUpload" class="upload-label">
+
+                    </label>
+                    <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+                    <p> </p>
+                    <div>
+                        <button type="submit" class="btn btn-primary btn-lg" id="btn-predict">Predict Image</button>
+                    </div>
+
+                </form>
+                <div class="image-section">
+                    <div class="img-preview">
+                        <div id="imagePreview">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="loader"> </div>
+
+                {% if result %}
+                <p class="text"> The Hand gesture is for the letter {{result}}</p>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+</body>
+<footer>
+    <script src="/static/js/main.js" type="text/javascript"></script>
+</footer>
+</html>
